@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>💻Code Editor</title>
+  </head>
+  <body>
+    <div id="title">
+      <h2>Live Text Editor</h2>
+      <span id="settingsIcon" onclick="toggle()">📐</span>
+      <span id="runJs">⏩</span>
+    </div>
+    <div class="popup" id="popupId">
+      <div class="overlay"></div>
+      <div class="window">
+        <div id="closeWindow" onclick="toggle()">❎</div>
+        <div id="buttonsDownload">
+          <button id="downloadHtml">Html File ⏬</button>
+          <button id="downloadCss">Save Css File ⏬</button>
+          <button id="downloadJs">Save Js File ⏬</button>
+          <button id="saveState">Save Code 💾</button>
+          <button id="clearState">Delete Code ❌</button>
+        </div>
+      </div>
+    </div>
+    <div id="containerStack">
+      <div id="htmlDiv">
+        <textarea
+          id="htmlArea"
+          placeholder="HTML"
+          rows="15"
+          cols="50"
+        ></textarea>
+      </div>
+      <div id="cssDiv">
+        <textarea id="cssArea" placeholder="CSS" rows="15" cols="50"></textarea>
+      </div>
+      <div id="jsDiv">
+        <textarea id="jsArea" placeholder="JS" rows="15" cols="50"></textarea>
+      </div>
+    </div>
+
+    <div id="containerOutput">
+      <iframe id="code"></iframe>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
