@@ -1,7 +1,7 @@
 // Initial variable declaring
 const html = document.getElementById("htmlArea");
 const css = document.getElementById("cssArea");
-const js = document.getElementById("jsArea");
+let js = document.getElementById("jsArea");
 const saveState = document.getElementById("saveState");
 const downloadHTML = document.getElementById("downloadHtml");
 const downloadJS = document.getElementById("downloadJs");
@@ -13,7 +13,7 @@ const buttonsDownload = document.getElementById("buttonsDownload");
 const code = document.getElementById("code").contentWindow.document;
 
 // Declaring opening and closing symbols
-const single_quote = "'";
+// const single_quote = "'";
 const lParen = "(";
 const rParen = ")";
 const lBrack = "[";
@@ -22,19 +22,19 @@ const lCurly = "{";
 const rCurly = "}";
 const lBrace = "<";
 const rBrace = ">";
-const back_tick = "`";
+// const back_tick = "`";
 
 // Declaring pairs
 const pairs = {
-  [single_quote]: single_quote,
+  // [single_quote]: single_quote,
   [lParen]: rParen,
   [lBrack]: rBrack,
   [lCurly]: rCurly,
   [lBrace]: rBrace,
-  [back_tick]: back_tick,
+  // [back_tick]: back_tick,
 };
 
-// Check if there are data previously saved and provide them in textarea
+// Check if there is data previously saved and provide them in html, css, js textarea
 for (let i = 0; i < localStorage.length; i++) {
   let key = localStorage.key(i);
   let code = localStorage.getItem(key);
@@ -48,14 +48,14 @@ document.body.onkeyup = (e) => {
   let keyTyped = e.key;
   let inputElement = e.target;
 
-  // If first digit starts with one the left symbols, close it with its right one, declared in pairs
+  // Check If first digit starts with one the left symbols, close it with its right one
   if (
     keyTyped.startsWith(lBrace) ||
     keyTyped.startsWith(lCurly) ||
     keyTyped.startsWith(lParen) ||
-    keyTyped.startsWith(single_quote) ||
-    keyTyped.startsWith(lBrack) ||
-    keyTyped.startsWith(back_tick)
+    // keyTyped.startsWith(single_quote) ||
+    keyTyped.startsWith(lBrack)
+    // keyTyped.startsWith(back_tick)
   ) {
     let caretPosition = inputElement.selectionStart;
     let closingChar = pairs[keyTyped];
@@ -81,7 +81,7 @@ document.body.onkeyup = (e) => {
   code.close();
 };
 
-// Javascript on run button
+// Event that runs Js code
 let run = document.getElementById("runJs");
 run.addEventListener("click", () => {
   let code = document.getElementById("code").contentWindow.document;
@@ -139,12 +139,14 @@ saveState.addEventListener("click", () => {
   css.value ? localStorage.setItem("css", css.value) : null;
   js.value ? localStorage.setItem("js", js.value) : null;
   location.reload();
+  window.scrollTo(0, 0);
 });
 
 // Delete local storage
 clearState.addEventListener("click", () => {
   localStorage.clear();
   location.reload();
+  window.scrollTo(0, 0);
 });
 
 // Popup toggler

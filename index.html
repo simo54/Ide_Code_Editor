@@ -4,28 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/2809495.svg" />
     <title>💻Code Editor</title>
   </head>
   <body>
+    <!-- Header -->
     <div id="title">
       <h2>Live Text Editor</h2>
-      <span id="settingsIcon" onclick="toggle()">📐</span>
-      <span id="runJs">⏩</span>
+      <!-- Settings Icon -->
+      <span id="settingsIcon" onclick="toggle()"
+        >📐<span class="tooltiptext">Settings</span></span
+      >
+      <!-- Run Js Icon -->
+      <span id="runJs">⏩<span class="tooltiptextJs">Run Js</span></span>
     </div>
+
+    <!-- Settings Popup -->
     <div class="popup" id="popupId">
       <div class="overlay"></div>
       <div class="window">
         <div id="closeWindow" onclick="toggle()">❎</div>
         <div id="buttonsDownload">
-          <button id="downloadHtml">Html File ⏬</button>
-          <button id="downloadCss">Save Css File ⏬</button>
-          <button id="downloadJs">Save Js File ⏬</button>
+          <button id="downloadHtml">Html ⏬</button>
+          <button id="downloadCss">Css ⏬</button>
+          <button id="downloadJs">Js ⏬</button>
           <button id="saveState">Save Code 💾</button>
           <button id="clearState">Delete Code ❌</button>
         </div>
       </div>
     </div>
+
+    <!-- Code editor container -->
     <div id="containerStack">
+      <!-- Html -->
       <div id="htmlDiv">
         <textarea
           id="htmlArea"
@@ -34,17 +45,28 @@
           cols="50"
         ></textarea>
       </div>
+      <!-- Css -->
       <div id="cssDiv">
         <textarea id="cssArea" placeholder="CSS" rows="15" cols="50"></textarea>
       </div>
+      <!-- Js -->
       <div id="jsDiv">
         <textarea id="jsArea" placeholder="JS" rows="15" cols="50"></textarea>
       </div>
     </div>
 
+    <!-- Output code -->
     <div id="containerOutput">
       <iframe id="code"></iframe>
     </div>
+
     <script type="text/javascript" src="./index.js"></script>
+
+    <!-- Credit browser Icon -->
+    <div>
+      Icons made by
+      <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
   </body>
 </html>
