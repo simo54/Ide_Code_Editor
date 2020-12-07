@@ -1,7 +1,19 @@
 #buttonsDownload {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 11% 6%;
+  justify-self: stretch;
   margin-top: 20px;
+}
+
+#buttonsDownload button {
+  font-size: 20px;
+}
+
+#closeWindow {
+  cursor: pointer;
+  text-align: right;
 }
 
 #containerStack {
@@ -24,16 +36,21 @@
   border: 2px solid rgba(68, 109, 245, 0.952);
 }
 
+#cssDiv {
+  display: flex;
+  justify-content: center;
+  width: 33.33%;
+}
+
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 #htmlArea {
   width: 100%;
   resize: vertical;
   border: 2px solid orangered;
-}
-
-#jsArea {
-  width: 100%;
-  resize: vertical;
-  border: 2px solid rgb(216, 216, 30);
 }
 
 #htmlDiv {
@@ -42,20 +59,10 @@
   width: 33.33%;
 }
 
-#cssDiv {
-  display: flex;
-  justify-content: center;
-  width: 33.33%;
-}
-
-#closeWindow {
-  cursor: pointer;
-  text-align: right;
-}
-
-h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+#jsArea {
+  width: 100%;
+  resize: vertical;
+  border: 2px solid rgb(216, 216, 30);
 }
 
 #jsDiv {
@@ -64,14 +71,24 @@ h2 {
   width: 33.33%;
 }
 
-#jsDiv textarea {
-  box-sizing: border-box;
-}
-
 #jsDiv button {
   position: absolute;
   top: 10;
   right: 10;
+}
+
+#jsDiv textarea {
+  box-sizing: border-box;
+}
+
+.popup .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
 }
 
 .popup .overlay {
@@ -93,22 +110,12 @@ h2 {
   transform: translate(-50%, -50%) scale(0);
   background: #fff;
   width: 60%;
-  height: 250px;
+  height: 30%;
   z-index: 2;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-}
-
-.popup .close-btn {
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  font-size: 25px;
 }
 
 .popup.active .overlay {

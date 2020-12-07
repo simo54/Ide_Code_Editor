@@ -1,7 +1,7 @@
 // Initial variable declaring
 const html = document.getElementById("htmlArea");
 const css = document.getElementById("cssArea");
-let js = document.getElementById("jsArea");
+const js = document.getElementById("jsArea");
 const saveState = document.getElementById("saveState");
 const downloadHTML = document.getElementById("downloadHtml");
 const downloadJS = document.getElementById("downloadJs");
@@ -57,17 +57,24 @@ document.body.onkeyup = (e) => {
     keyTyped.startsWith(lBrack)
     // keyTyped.startsWith(back_tick)
   ) {
+    // Getting the position of symbol
     let caretPosition = inputElement.selectionStart;
+
+    // Find the right pair
     let closingChar = pairs[keyTyped];
+
+    // Adding right pair to input
     inputElement.value =
       inputElement.value.substr(0, caretPosition) +
       closingChar +
       inputElement.value.substr(caretPosition);
+
+    // Moving cursor between symbols
     inputElement.setSelectionRange(caretPosition, caretPosition);
     return;
   }
 
-  // Write inside Iframe the code
+  // Write code inside the Iframe
   code.open();
   code.writeln(
     html.value +
