@@ -1,5 +1,6 @@
 # Ide_Code_Editor
 
+
 [![Github All Releases](https://img.shields.io/badge/README.md-in%20progress-yellow)]()
 
 An IDE editor created with Javascript.
@@ -18,3 +19,7 @@ To install it locally you can use the following git command to clone it and use 
 ```
 git clone https://github.com/simo54/Ide_Code_Editor.git
 ```
+
+## Demo
+
+![](assets/demoOff.gif)
