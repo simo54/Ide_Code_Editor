@@ -160,3 +160,13 @@ clearState.addEventListener("click", () => {
 const toggle = () => {
   document.getElementById("popupId").classList.toggle("active");
 };
+
+// Alert if user is refreshing or closing the page
+let isDirty = () => {
+  return false;
+};
+
+// Warn user before leaving the page when code is written
+window.addEventListener("beforeunload", (event) => {
+  event.returnValue = `Are you sure you want to leave?`;
+});
